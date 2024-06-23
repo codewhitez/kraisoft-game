@@ -1,0 +1,40 @@
+@import "variables.module.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header,
+.footer {
+    background-color: $background__black1;
+    color: $color__white;
+    text-align: center;
+    padding: 10px;
+}
+
+.header {
+    .logo {
+        font-size: 27px;
+        font-weight: 900;
+        color: $color__lightblue;
+    }
+
+    nav {
+        margin: 16px auto 16px auto;
+    }
+
+    a {
+        font-size: 20px;
+        color: $color__white;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+}
+
+.main {
+    flex-grow: 1;
+    display: flex;
+    /* padding: 20px; */
+}

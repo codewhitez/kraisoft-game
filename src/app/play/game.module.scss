@@ -1,0 +1,57 @@
+@import "../variables.module.scss";
+
+.game-area {
+    flex-grow: 1;
+}
+
+.text-background::before {
+    content: "Click Me!";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw; /* Adjust the size as needed */
+    color: rgba(0, 0, 0, 0.1); /* Light gray, adjust opacity as needed */
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: -1; /* Ensure the text is behind the content */
+    /* pointer-events: none; */ /* Ensure the text is not interactable */
+  }
+
+.draggable {
+    position: absolute;
+    background-image: url(../../../public/img/coin.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+}
+
+.hidden-scroll {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+}
+
+.focused {
+    z-index: 1000;
+}
+
+.animate {
+    animation: moveToPosition 1s ease-in-out;
+}
+
+@keyframes moveToPosition {
+    from {
+        top: var(--start-y, 0);
+        left: var(--start-x, 0);
+    }
+
+    to {
+        top: var(--target-y, 0);
+        left: var(--target-x, 0);
+    }
+}
